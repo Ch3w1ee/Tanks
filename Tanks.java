@@ -45,9 +45,9 @@ public class Tanks {
     public static void main(String[] args) {
         while (true) {
             System.out.println("\n=== ТАНЧИКИ ===");
-            System.out.println("1. Начать игру");
-            System.out.println("2. Выход");
-            System.out.print("Выбор: ");
+            System.out.println("1. Почати гру");
+            System.out.println("2. Вихiд");
+            System.out.print("Вибiр: ");
 
             String c = scanner.nextLine();
             if (c.equals("1")) startGame();
@@ -64,7 +64,7 @@ public class Tanks {
 
             while (true) {
                 drawField();
-                System.out.println("Жизни: " + lives + " | Уровень: " + (level + 1));
+                System.out.println("Життя: " + lives + " | Рiвень: " + (level + 1));
                 System.out.print("Команда: ");
 
                 String cmd = scanner.nextLine().toLowerCase();
@@ -75,7 +75,7 @@ public class Tanks {
                 enemyAttack();
 
                 if (lives <= 0) {
-                    System.out.println("\n💀 ИГРА ОКОНЧЕНА");
+                    System.out.println("\n💀 ГРА ЗАВЕРШЕНА");
                     scanner.nextLine();
                     return;
                 }
@@ -87,7 +87,7 @@ public class Tanks {
             }
         }
 
-        System.out.println("\n🏆 ТЫ ПРОШЁЛ ВСЕ УРОВНИ!");
+        System.out.println("\n🏆 ТИ ПРОЙШОВ УСI РIВНІ!");
         scanner.nextLine();
     }
 
@@ -140,7 +140,7 @@ public class Tanks {
 
         if (field[ny][nx] == 'E') {
             lives--;
-            System.out.println("⚠ Враг атаковал! -1 жизнь");
+            System.out.println("⚠ Ворог атакував! -1 життя");
             return;
         }
 
@@ -169,7 +169,7 @@ public class Tanks {
                 if (field[y][x] == 'E') {
                     if (Math.abs(x - tankX) + Math.abs(y - tankY) == 1) {
                         lives--;
-                        System.out.println("⚠ Враг рядом! -1 жизнь");
+                        System.out.println("⚠ Ворог поруч! -1 життя");
                         return;
                     }
                 }
